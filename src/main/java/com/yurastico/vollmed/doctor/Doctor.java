@@ -20,4 +20,12 @@ public class Doctor {
     private Specialization specialization;
     @Embedded
     private Address address;
+
+    public Doctor(DoctorCreateData data) {
+        this.name = data.name();
+        this.email = data.email();
+        this.crm = data.crm();
+        this.specialization = data.specialization();
+        this.address = new Address(data.address());
+    }
 }
