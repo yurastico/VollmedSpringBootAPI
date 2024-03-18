@@ -11,6 +11,14 @@ import lombok.*;
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
 public class Doctor {
+    public Long getId() {
+        return id;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 

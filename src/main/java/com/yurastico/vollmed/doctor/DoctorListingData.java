@@ -1,8 +1,8 @@
 package com.yurastico.vollmed.doctor;
 
-public record DoctorListingData(String name, String email,String crm, Specialization specialization) {
+public record DoctorListingData(Long id,String name, String email,String crm, Specialization specialization) {
     public DoctorListingData(Doctor doctor) {
 
-        this(doctor.getName(),doctor.getEmail(),doctor.getCrm(),doctor.getSpecialization());
+        this(doctor.getId(),doctor.getName(),doctor.getEmail(),doctor.getCrm(),doctor.getSpecialization());
     }
 }

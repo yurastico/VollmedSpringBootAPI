@@ -31,4 +31,6 @@ public class DoctorController {
         return repository.findAll(pagination).map(DoctorListingData::new);
     }
 
+
+
 }
