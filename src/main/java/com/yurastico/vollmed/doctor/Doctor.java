@@ -13,10 +13,35 @@ import lombok.*;
 public class Doctor {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    public String getName() {
+        return name;
+    }
+
     private String name;
+
+    public String getPhone() {
+        return phone;
+    }
+
     private String phone;
+
+    public String getEmail() {
+        return email;
+    }
+
     private String email;
+
+    public String getCrm() {
+        return crm;
+    }
+
     private String crm;
+
+    public Specialization getSpecialization() {
+        return specialization;
+    }
+
     @Enumerated(EnumType.STRING)
     private Specialization specialization;
     @Embedded
