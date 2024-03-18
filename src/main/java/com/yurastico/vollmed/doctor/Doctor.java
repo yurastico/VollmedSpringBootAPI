@@ -28,6 +28,7 @@ public class Doctor {
 
     private String name;
 
+    private Boolean active;
     public String getPhone() {
         return phone;
     }
@@ -56,6 +57,7 @@ public class Doctor {
     private Address address;
 
     public Doctor(DoctorCreateData data) {
+        this.active = true;
         this.name = data.name();
         this.email = data.email();
         this.crm = data.crm();
@@ -74,5 +76,9 @@ public class Doctor {
         if (data.address() != null) {
             this.address.updateAddress(data.address());
         }
+    }
+
+    public void deleteDoctot() {
+        this.active = false;
     }
 }
