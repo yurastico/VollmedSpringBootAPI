@@ -78,7 +78,7 @@ public class Doctor {
         }
     }
 
-    public void deleteDoctot() {
+    public void deleteDoctor() {
         this.active = false;
     }
 }
