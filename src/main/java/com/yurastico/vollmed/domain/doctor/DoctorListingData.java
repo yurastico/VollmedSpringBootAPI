@@ -1,4 +1,4 @@
-package com.yurastico.vollmed.doctor;
+package com.yurastico.vollmed.domain.doctor;
 
 public record DoctorListingData(Long id,String name, String email,String crm, Specialization specialization) {
     public DoctorListingData(Doctor doctor) {

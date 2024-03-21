@@ -1,6 +1,6 @@
 package com.yurastico.vollmed.controller;
 
-import com.yurastico.vollmed.doctor.*;
+import com.yurastico.vollmed.domain.doctor.*;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

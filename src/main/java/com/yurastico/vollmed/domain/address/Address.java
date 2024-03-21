@@ -1,4 +1,4 @@
-package com.yurastico.vollmed.address;
+package com.yurastico.vollmed.domain.address;
 
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;

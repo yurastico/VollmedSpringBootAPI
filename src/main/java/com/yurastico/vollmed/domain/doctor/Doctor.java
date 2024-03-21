@@ -1,6 +1,6 @@
-package com.yurastico.vollmed.doctor;
+package com.yurastico.vollmed.domain.doctor;
 
-import com.yurastico.vollmed.address.Address;
+import com.yurastico.vollmed.domain.address.Address;
 import jakarta.persistence.*;
 import lombok.*;
 

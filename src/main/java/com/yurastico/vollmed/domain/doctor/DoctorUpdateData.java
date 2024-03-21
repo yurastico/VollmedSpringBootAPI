@@ -1,6 +1,6 @@
-package com.yurastico.vollmed.doctor;
+package com.yurastico.vollmed.domain.doctor;
 
-import com.yurastico.vollmed.address.AddressData;
+import com.yurastico.vollmed.domain.address.AddressData;
 import jakarta.validation.constraints.NotNull;
 
 public record DoctorUpdateData(

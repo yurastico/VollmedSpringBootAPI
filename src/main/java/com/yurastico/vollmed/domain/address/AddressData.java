@@ -1,4 +1,4 @@
-package com.yurastico.vollmed.address;
+package com.yurastico.vollmed.domain.address;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
