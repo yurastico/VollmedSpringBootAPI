@@ -1,4 +1,4 @@
-package com.yurastico.vollmed.infra;
+package com.yurastico.vollmed.infra.exeption;
 
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.ResponseEntity;
