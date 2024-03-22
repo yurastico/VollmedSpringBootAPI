@@ -2,6 +2,7 @@ package com.yurastico.vollmed.controller;
 
 import com.yurastico.vollmed.domain.user.AuthenticationData;
 import com.yurastico.vollmed.domain.user.User;
+import com.yurastico.vollmed.infra.security.TokenJWTData;
 import com.yurastico.vollmed.infra.security.TokenService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,10 +23,12 @@ public class AuthenticationController {
     private TokenService tokenService;
     @PostMapping
     public ResponseEntity login(@RequestBody @Valid AuthenticationData data) {
-        var token = new UsernamePasswordAuthenticationToken(data.login(),data.password());
-        var authentication = manager.authenticate(token);
+        var authenticationToken = new UsernamePasswordAuthenticationToken(data.login(),data.password());
+        var authentication = manager.authenticate(authenticationToken);
+        var tokenJwt = tokenService.generateToken((User)authentication.getPrincipal());
 
-        return ResponseEntity.ok(tokenService.generateToken((User)authentication.getPrincipal())).build();
+
+        return ResponseEntity.ok(new TokenJWTData(tokenJwt));
     }
 
 }
