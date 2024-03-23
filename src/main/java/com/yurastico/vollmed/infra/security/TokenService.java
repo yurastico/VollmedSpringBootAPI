@@ -3,6 +3,7 @@ package com.yurastico.vollmed.infra.security;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTCreationException;
+import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.yurastico.vollmed.domain.user.User;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -27,6 +28,20 @@ public class TokenService {
             throw new RuntimeException("generetion token jwt error", exception);
         }
     }
+
+    public String getSubject(String tokenJWT) {
+        try {
+            var algorithm = Algorithm.HMAC256(secret);
+            return JWT.require(algorithm)
+                    .withIssuer("API Voll.med")
+                    .build()
+                    .verify(tokenJWT)
+                    .getSubject();
+        } catch (JWTVerificationException exception) {
+            throw new RuntimeException("Token JWT invalid or wxpired!");
+        }
+    }
+
     private Instant expirationDate() {
         return LocalDateTime.now().plusHours(2).toInstant(ZoneOffset.of("-03:00"));
     }
