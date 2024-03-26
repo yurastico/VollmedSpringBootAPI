@@ -1,4 +1,4 @@
 package com.yurastico.vollmed.domain.appointment;
 
-public record AppointmentDetailData(Long id,Long idDoctor,Long ) {
+public record AppointmentDetailData(Long id,Long idDoctor) {
 }
