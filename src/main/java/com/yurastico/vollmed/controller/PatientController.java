@@ -32,7 +32,11 @@ public class PatientController {
         var uri = uriBuilder.path("/patients/{id}").buildAndExpand(doctor.getId()).toUri();
         return ResponseEntity.created(uri).body(new DetailDoctorData(patient));
 
-    }   
+    }
+
+    public void deletePatient() j{
+        
+    }
 
 
 
