@@ -17,13 +17,22 @@ import org.springframework.web.util.UriComponentsBuilder;
 public class PatientController {
     @PostMapping
     @Transactional
-    public ResponseEntity createPatient(@RequestBody @Valid PatientCreateData data, UriComponentsBuilder uriBuilder) {
+    public Response/Entity createPatient(@RequestBody @Valid PatientCreateData data, UriComponentsBuilder uriBuilder) {
         var doctor = new Patient(data);
         repository.save(doctor);
         var uri = uriBuilder.path("/patients/{id}").buildAndExpand(doctor.getId()).toUri();
         return ResponseEntity.created(uri).body(new DetailDoctorData(patient));
 
     }
+    @PostMapping
+    @Transactional
+    public Response/Entity createPatient(@RequestBody @Valid PatientCreateData data, UriComponentsBuilder uriBuilder) {
+        var doctor = new Patient(data);
+        repository.save(doctor);
+        var uri = uriBuilder.path("/patients/{id}").buildAndExpand(doctor.getId()).toUri();
+        return ResponseEntity.created(uri).body(new DetailDoctorData(patient));
+
+    }   
 
 
 
