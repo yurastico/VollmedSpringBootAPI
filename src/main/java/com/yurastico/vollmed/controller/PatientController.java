@@ -34,13 +34,7 @@ public class PatientController {
 
     }
 
-    public void deletePatient() {
-
-    }
-
-    public void getPatient() {
-        
-    }
+  
 
 
 
